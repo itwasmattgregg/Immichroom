@@ -1,13 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native';
 
 /**
- * Placeholder home — verifies ImageRoom boots.
+ * Placeholder home — verifies IMMICHROOM boots.
  * Library UI + Immich wiring come next; connection lives in services/immich.
  */
 export function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>ImageRoom</Text>
+      <Text style={styles.title}>IMMICHROOM</Text>
       <Text style={styles.subtitle}>Fast thin client for your Immich library</Text>
     </View>
   );

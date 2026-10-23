@@ -17,7 +17,7 @@ export type ImmichClientOptions = {
 };
 
 /**
- * Thin Immich HTTP client for ImageRoom.
+ * Thin Immich HTTP client for IMMICHROOM.
  * Auth + library read paths only (no EditRecipe writes yet).
  */
 export class ImmichClient {

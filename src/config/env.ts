@@ -1,8 +1,8 @@
 /**
- * Public runtime config for ImageRoom.
+ * Public runtime config for IMMICHROOM.
  * Set via Expo public env vars (see `.env.example`).
  */
-export type ImageRoomEnv = {
+export type ImmichRoomEnv = {
   /** Immich server origin, e.g. https://immich.tailnet.ts.net */
   immichBaseUrl: string | null;
   /** Optional long-lived API key (x-api-key). Prefer over password in the app. */
@@ -14,14 +14,14 @@ function trimOrNull(value: string | undefined): string | null {
   return v ? v.replace(/\/$/, '') : null;
 }
 
-export function getEnv(): ImageRoomEnv {
+export function getEnv(): ImmichRoomEnv {
   return {
     immichBaseUrl: trimOrNull(process.env.EXPO_PUBLIC_IMMICH_BASE_URL),
     immichApiKey: trimOrNull(process.env.EXPO_PUBLIC_IMMICH_API_KEY),
   };
 }
 
-export function assertImmichConfigured(env: ImageRoomEnv = getEnv()): asserts env is ImageRoomEnv & {
+export function assertImmichConfigured(env: ImmichRoomEnv = getEnv()): asserts env is ImmichRoomEnv & {
   immichBaseUrl: string;
 } {
   if (!env.immichBaseUrl) {

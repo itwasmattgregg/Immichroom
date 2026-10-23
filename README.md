@@ -1,4 +1,4 @@
-# ImageRoom
+# IMMICHROOM
 
 Fast thin Lightroom-style mobile client over your **Immich** library — not a second photo manager.
 
@@ -40,7 +40,7 @@ Create an API key in the Immich web UI (Account → API Keys).
 ## Run
 
 ```bash
-cd ImageRoom
+cd IMMICHROOM
 npm install
 npm start
 ```
@@ -82,4 +82,4 @@ const thumb = immich.thumbnailUrl(assets[0].id, 'preview');
 
 - **Immich URL + API key required** before `validateConnection()` / `listRecentAssets()` succeed.
 - This environment has **no Immich config** checked in; use local `.env` (gitignored).
-- Pushing to GitHub needs a remote (scaffold is on branch `cursor/imageroom-scaffold-6da5`).
+- Pushing to GitHub needs a remote (scaffold is on branch `cursor/immichroom-rename-6da5`).
