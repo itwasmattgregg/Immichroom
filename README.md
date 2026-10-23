@@ -2,7 +2,7 @@
 
 Fast thin Lightroom-style mobile client over your **Immich** library — not a second photo manager.
 
-This scaffold is **Phase 0 plumbing**: Expo app shell, Immich API service (auth + list assets / preview URLs), Develop stub, and a placeholder home screen.
+Phase 0+1 in progress: Expo shell, Immich API, **Auto Tone v1**, **Tri-X Warm**, EditRecipe metadata persistence, Develop screen.
 
 ## Stack
 
@@ -71,12 +71,27 @@ const thumb = immich.thumbnailUrl(assets[0].id, 'preview');
 // Fetch thumb with immich.mediaHeaders()
 ```
 
-## Out of scope (this scaffold)
+## Develop (Auto + Tri-X Warm)
 
-- Auto Tone, Tri-X Warm, EditRecipe metadata writes
+1. Configure `.env` and `npm start` / `npm run web`
+2. Home loads recent Immich images — tap one
+3. **Auto** — histogram Auto Tone v1 on the preview
+4. **Tri-X Warm** — built-in warm B&W (`builtin.tri-x-warm`)
+5. **Save** — writes EditRecipe to Immich custom metadata key `immichroom`
+6. **Reset** / **Clear saved** — empty recipe / delete metadata
+
+Offline smoke (no Immich):
+
+```bash
+npm run smoke:develop
+```
+
+## Out of scope (still)
+
 - Cull / albums UI
 - Versions / duplicates (V2)
 - Filesystem / DNG sidecars
+- Contrast slider UI for Tri-X Warm (recipe supports contrastMin/Max)
 
 ## Blockers
 

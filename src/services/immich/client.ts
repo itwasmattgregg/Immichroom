@@ -1,6 +1,7 @@
 import { assertImmichConfigured, getEnv } from '../../config/env';
 import type {
   ImmichAsset,
+  ImmichAssetMetadataRow,
   ImmichAuthLoginRequest,
   ImmichCredentials,
   ImmichLoginResponse,
@@ -18,7 +19,7 @@ export type ImmichClientOptions = {
 
 /**
  * Thin Immich HTTP client for IMMICHROOM.
- * Auth + library read paths only (no EditRecipe writes yet).
+ * Auth, library reads, and EditRecipe metadata persistence.
  */
 export class ImmichClient {
   readonly baseUrl: string;
@@ -116,6 +117,42 @@ export class ImmichClient {
       user = await this.getMyUser();
     }
     return { version, user };
+  }
+
+  /** GET /api/assets/{id} */
+  async getAsset(assetId: string): Promise<ImmichAsset> {
+    return this.request<ImmichAsset>(`/api/assets/${assetId}`, { method: 'GET' });
+  }
+
+  /** GET /api/assets/{id}/metadata/{key} */
+  async getAssetMetadataByKey(
+    assetId: string,
+    key: string,
+  ): Promise<ImmichAssetMetadataRow> {
+    return this.request<ImmichAssetMetadataRow>(
+      `/api/assets/${assetId}/metadata/${encodeURIComponent(key)}`,
+      { method: 'GET' },
+    );
+  }
+
+  /** PUT /api/assets/{id}/metadata */
+  async upsertAssetMetadata(
+    assetId: string,
+    key: string,
+    value: Record<string, unknown>,
+  ): Promise<ImmichAssetMetadataRow[]> {
+    return this.request<ImmichAssetMetadataRow[]>(`/api/assets/${assetId}/metadata`, {
+      method: 'PUT',
+      body: { items: [{ key, value }] },
+    });
+  }
+
+  /** DELETE /api/assets/{id}/metadata/{key} */
+  async deleteAssetMetadataByKey(assetId: string, key: string): Promise<void> {
+    await this.request<void>(
+      `/api/assets/${assetId}/metadata/${encodeURIComponent(key)}`,
+      { method: 'DELETE' },
+    );
   }
 
   private authHeaders(): Record<string, string> {

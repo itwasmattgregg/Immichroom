@@ -57,3 +57,8 @@ export type ImmichSearchMetadataResponse = {
 export type ImmichCredentials =
   | { kind: 'apiKey'; apiKey: string }
   | { kind: 'bearer'; accessToken: string };
+
+export type ImmichAssetMetadataRow = {
+  key: string;
+  value: Record<string, unknown>;
+};
