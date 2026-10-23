@@ -1,100 +1,58 @@
 # IMMICHROOM
 
-Fast thin Lightroom-style mobile client over your **Immich** library — not a second photo manager.
+Fast thin Lightroom-style client over your **Immich** library — **Rust-first**.
 
-Phase 0+1 in progress: Expo shell, Immich API, **Auto Tone v1**, **Tri-X Warm**, EditRecipe metadata persistence, Develop screen.
+Auto Tone, Tri-X Warm, EditRecipe bake, and the Immich HTTP client live in a Rust workspace. The old Expo/React Native app under this repo is **legacy** (kept for reference only; not the speed path).
 
-## Stack
-
-- Expo (SDK 58) + React Native + TypeScript
-- Immich HTTP API (`src/services/immich`)
-- Develop / EditRecipe module stub (`src/develop`) — no writes yet
-
-## Folder structure
+## Architecture
 
 ```
-App.tsx
-src/
-  config/env.ts          # EXPO_PUBLIC_* config
-  screens/HomeScreen.tsx
-  components/            # UI building blocks (empty for now)
-  services/immich/       # API client
-  develop/               # Edit stub (Tri-X Warm / Auto later)
+crates/
+  immichroom-core/    EditRecipe, Auto Tone v1, Tri-X Warm, JPEG bake
+  immichroom-immich/  Immich API (auth, assets, metadata)
+  immichroom-cli/     `immichroom` binary for smoke + develop ops
 ```
 
-## Configure Immich
+Next UI step: **SwiftUI (iOS) + UniFFI** calling `immichroom-core` — not React Native.
 
-No Immich URL or credentials were found in the workspace. Copy the example env and fill in your server (Tailscale MagicDNS is fine):
+## Requirements
+
+- Rust 1.85+ (stable)
+- Immich server + API key (for network commands)
 
 ```bash
-cp .env.example .env
+# optional env
+export IMMICH_BASE_URL=https://your-immich-host
+export IMMICH_API_KEY=your_key
 ```
 
-```env
-EXPO_PUBLIC_IMMICH_BASE_URL=https://your-immich-host
-EXPO_PUBLIC_IMMICH_API_KEY=your_api_key
-```
+(Also accepts `EXPO_PUBLIC_IMMICH_*` for compatibility.)
 
-Create an API key in the Immich web UI (Account → API Keys).
-
-## Run
+## Build & smoke
 
 ```bash
-cd IMMICHROOM
-npm install
-npm start
+cargo test -p immichroom-core
+cargo run -p immichroom-cli -- smoke
 ```
 
-Then press `i` (iOS simulator / Expo Go), `a` (Android), or scan the QR code with Expo Go.
-
-Web smoke check:
+## Immich commands
 
 ```bash
-npm run web
+cargo run -p immichroom-cli -- ping
+cargo run -p immichroom-cli -- list
+cargo run -p immichroom-cli -- develop <asset-uuid> --look trix --out /tmp/out.jpg
+cargo run -p immichroom-cli -- develop <asset-uuid> --look auto --save-recipe
 ```
 
-Typecheck:
+EditRecipe is stored on the asset under Immich custom metadata key `immichroom` (same schema as before).
 
-```bash
-npx tsc --noEmit
-```
+## Legacy Expo app
 
-## Using the Immich client (no UI yet)
+The TypeScript Expo UI (`App.tsx`, `src/`, `package.json`) is deprecated. Do not invest further in RN performance work — port features into Rust + a native shell instead.
 
-```ts
-import { createImmichClient } from './src/services/immich';
+## Product decisions (unchanged)
 
-const immich = createImmichClient();
-const { version, user } = await immich.validateConnection();
-const assets = await immich.listRecentAssets({ size: 20 });
-const thumb = immich.thumbnailUrl(assets[0].id, 'preview');
-// Fetch thumb with immich.mediaHeaders()
-```
-
-## Develop (Auto + Tri-X Warm)
-
-1. Configure `.env` and `npm start` / `npm run web`
-2. Home loads recent Immich images — tap one
-3. **Auto** — histogram Auto Tone v1 on the preview
-4. **Tri-X Warm** — built-in warm B&W (`builtin.tri-x-warm`)
-5. **Save** — writes EditRecipe to Immich custom metadata key `immichroom`
-6. **Reset** / **Clear saved** — empty recipe / delete metadata
-
-Offline smoke (no Immich):
-
-```bash
-npm run smoke:develop
-```
-
-## Out of scope (still)
-
-- Cull / albums UI
-- Versions / duplicates (V2)
-- Filesystem / DNG sidecars
-- Contrast slider UI for Tri-X Warm (recipe supports contrastMin/Max)
-
-## Blockers
-
-- **Immich URL + API key required** before `validateConnection()` / `listRecentAssets()` succeed.
-- This environment has **no Immich config** checked in; use local `.env` (gitignored).
-- Pushing to GitHub needs a remote (scaffold is on branch `cursor/immichroom-rename-6da5`).
+- Thin client over Immich (not a second photo manager)
+- Tri-X Warm = `builtin.tri-x-warm` (not Leica/LUX naming)
+- One EditRecipe per asset (MVP); versions = V2
+- No filesystem DNG/XMP sidecars

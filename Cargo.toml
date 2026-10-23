@@ -1,0 +1,27 @@
+[workspace]
+resolver = "2"
+members = [
+  "crates/immichroom-core",
+  "crates/immichroom-immich",
+  "crates/immichroom-cli",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["IMMICHROOM"]
+
+[workspace.dependencies]
+immichroom-core = { path = "crates/immichroom-core" }
+immichroom-immich = { path = "crates/immichroom-immich" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+image = { version = "0.25", default-features = false, features = ["jpeg"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+clap = { version = "4", features = ["derive", "env"] }
+anyhow = "1"
+chrono = { version = "0.4", default-features = false, features = ["clock", "serde"] }
+base64 = "0.22"

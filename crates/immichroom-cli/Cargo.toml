@@ -1,0 +1,18 @@
+[package]
+name = "immichroom-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "IMMICHROOM CLI — smoke tests and Immich develop operations"
+
+[[bin]]
+name = "immichroom"
+path = "src/main.rs"
+
+[dependencies]
+immichroom-core = { workspace = true }
+immichroom-immich = { workspace = true }
+anyhow = { workspace = true }
+clap = { workspace = true }
+tokio = { workspace = true }
+serde_json = { workspace = true }
