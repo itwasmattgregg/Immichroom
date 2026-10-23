@@ -44,3 +44,10 @@ yarn-error.*
 # Rust
 /target/
 **/*.rs.bk
+
+# iOS Rust build products (regenerate with apps/ios/scripts/build-xcframework.sh)
+apps/ios/Rust/ImmichroomFFI.xcframework/
+apps/ios/Rust/Headers/
+apps/ios/Rust/sim-universal/
+apps/ios/Immichroom.xcodeproj/xcuserdata/
+apps/ios/Immichroom.xcodeproj/project.xcworkspace/xcuserdata/

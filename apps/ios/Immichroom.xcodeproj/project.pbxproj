@@ -1,0 +1,302 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F407D0A72D9F4329B35EACFB /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E846142AB47B086B67F8F /* AppModel.swift */; };
+		5E1CF4BA972E456F9F1F510B /* ConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF978C925F9442FBA13A433 /* ConnectView.swift */; };
+		F71A83D7B44C4BB982E37CEE /* DevelopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2817638324624F0CB292E7CB /* DevelopView.swift */; };
+		5275CCF7EE3749EFA7A142E4 /* ImmichroomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECDB6E060454FD5ACB2A10D /* ImmichroomApp.swift */; };
+		4AC23DABE6664F378E17E706 /* ImmichroomError+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0CBC905E334D75AEE08A41 /* ImmichroomError+Localized.swift */; };
+		2B8D85CF06F74A708AA4C065 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61268E4A90724F6A85F49C24 /* LibraryView.swift */; };
+		02D53DE6DE0E49F285E5E264 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62ABD53B22F4898B85BCA70 /* RootView.swift */; };
+		C723A85D094B47CF9B52975B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363FF03A12BC44EEA7E8B8F7 /* Theme.swift */; };
+		BE5C12D6469D4C6F8E2132E1 /* immichroom_ffi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4769CBE11734F19B56ACD5E /* immichroom_ffi.swift */; };
+		E64B732A531C4F198E61D70A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F90D986B64E47F497AD408E /* Assets.xcassets */; };
+		CCDB2F1426464395B0F4D581 /* ImmichroomFFI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB716AB8B4A4DF195B5DB30 /* ImmichroomFFI.xcframework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F11E846142AB47B086B67F8F /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		9FF978C925F9442FBA13A433 /* ConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectView.swift; sourceTree = "<group>"; };
+		2817638324624F0CB292E7CB /* DevelopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopView.swift; sourceTree = "<group>"; };
+		2ECDB6E060454FD5ACB2A10D /* ImmichroomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmichroomApp.swift; sourceTree = "<group>"; };
+		4A0CBC905E334D75AEE08A41 /* ImmichroomError+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmichroomError+Localized.swift; sourceTree = "<group>"; };
+		61268E4A90724F6A85F49C24 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		F62ABD53B22F4898B85BCA70 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		363FF03A12BC44EEA7E8B8F7 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A4769CBE11734F19B56ACD5E /* immichroom_ffi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = immichroom_ffi.swift; sourceTree = "<group>"; };
+		2F90D986B64E47F497AD408E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2FB716AB8B4A4DF195B5DB30 /* ImmichroomFFI.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ImmichroomFFI.xcframework; path = Rust/ImmichroomFFI.xcframework; sourceTree = "<group>"; };
+		7799F6DFCB954CE581297BA4 /* Immichroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Immichroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9DBC835D5B564C47B0088FE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCDB2F1426464395B0F4D581 /* ImmichroomFFI.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C1A0E429F3B4C9AB312AA12 = {
+			isa = PBXGroup;
+			children = (
+				D5EBF695440F4AAEA394193B /* Immichroom */,
+				843F6422A8BA46A5A7406EC6 /* Generated */,
+				3AD3066DA87042DCA833350B /* Frameworks */,
+				42BD7BC46B514AD79DC8188E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42BD7BC46B514AD79DC8188E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7799F6DFCB954CE581297BA4 /* Immichroom.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5EBF695440F4AAEA394193B /* Immichroom */ = {
+			isa = PBXGroup;
+			children = (
+				F11E846142AB47B086B67F8F /* AppModel.swift */,
+				9FF978C925F9442FBA13A433 /* ConnectView.swift */,
+				2817638324624F0CB292E7CB /* DevelopView.swift */,
+				2ECDB6E060454FD5ACB2A10D /* ImmichroomApp.swift */,
+				4A0CBC905E334D75AEE08A41 /* ImmichroomError+Localized.swift */,
+				61268E4A90724F6A85F49C24 /* LibraryView.swift */,
+				F62ABD53B22F4898B85BCA70 /* RootView.swift */,
+				363FF03A12BC44EEA7E8B8F7 /* Theme.swift */,
+				2F90D986B64E47F497AD408E /* Assets.xcassets */,
+			);
+			path = Immichroom;
+			sourceTree = "<group>";
+		};
+		843F6422A8BA46A5A7406EC6 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				A4769CBE11734F19B56ACD5E /* immichroom_ffi.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		3AD3066DA87042DCA833350B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FB716AB8B4A4DF195B5DB30 /* ImmichroomFFI.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2ADEF6456234402CB3C395AE /* Immichroom */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5010F1DFFE8E46288674522B /* Build configuration list for PBXNativeTarget "Immichroom" */;
+			buildPhases = (
+				FED47FA6CDB9479BA755C720 /* Sources */,
+				9DBC835D5B564C47B0088FE6 /* Frameworks */,
+				228B00F167D34918B54AA397 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Immichroom;
+			productName = Immichroom;
+			productReference = 7799F6DFCB954CE581297BA4 /* Immichroom.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		79F21481C8104BF1A2F81377 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = B9AB49C27068404A9D1C9E24 /* Build configuration list for PBXProject "Immichroom" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6C1A0E429F3B4C9AB312AA12;
+			productRefGroup = 42BD7BC46B514AD79DC8188E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2ADEF6456234402CB3C395AE /* Immichroom */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		228B00F167D34918B54AA397 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E64B732A531C4F198E61D70A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FED47FA6CDB9479BA755C720 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F407D0A72D9F4329B35EACFB /* AppModel.swift in Sources */,
+				5E1CF4BA972E456F9F1F510B /* ConnectView.swift in Sources */,
+				F71A83D7B44C4BB982E37CEE /* DevelopView.swift in Sources */,
+				5275CCF7EE3749EFA7A142E4 /* ImmichroomApp.swift in Sources */,
+				4AC23DABE6664F378E17E706 /* ImmichroomError+Localized.swift in Sources */,
+				2B8D85CF06F74A708AA4C065 /* LibraryView.swift in Sources */,
+				02D53DE6DE0E49F285E5E264 /* RootView.swift in Sources */,
+				C723A85D094B47CF9B52975B /* Theme.swift in Sources */,
+				BE5C12D6469D4C6F8E2132E1 /* immichroom_ffi.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9A3EBF6ECC904A78BDA9C156 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC54B82D14D74FB08A9AF385 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		86A6948FB5BE495B86E1A058 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = IMMICHROOM;
+				INFOPLIST_KEY_NSAppTransportSecurity_NSAllowsLocalNetworking = YES;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "IMMICHROOM connects to your Immich server on the local network or Tailscale.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SystemConfiguration,
+					"-framework",
+					Security,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.immichroom.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		18B38087A5414BBCAB6FEEF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = IMMICHROOM;
+				INFOPLIST_KEY_NSAppTransportSecurity_NSAllowsLocalNetworking = YES;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "IMMICHROOM connects to your Immich server on the local network or Tailscale.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SystemConfiguration,
+					"-framework",
+					Security,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.immichroom.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B9AB49C27068404A9D1C9E24 /* Build configuration list for PBXProject "Immichroom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A3EBF6ECC904A78BDA9C156 /* Debug */,
+				AC54B82D14D74FB08A9AF385 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5010F1DFFE8E46288674522B /* Build configuration list for PBXNativeTarget "Immichroom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86A6948FB5BE495B86E1A058 /* Debug */,
+				18B38087A5414BBCAB6FEEF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 79F21481C8104BF1A2F81377 /* Project object */;
+}

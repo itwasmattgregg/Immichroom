@@ -4,6 +4,8 @@ members = [
   "crates/immichroom-core",
   "crates/immichroom-immich",
   "crates/immichroom-cli",
+  "crates/immichroom-ffi",
+  "crates/uniffi-bindgen",
 ]
 
 [workspace.package]
@@ -15,6 +17,7 @@ authors = ["IMMICHROOM"]
 [workspace.dependencies]
 immichroom-core = { path = "crates/immichroom-core" }
 immichroom-immich = { path = "crates/immichroom-immich" }
+immichroom-ffi = { path = "crates/immichroom-ffi" }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 thiserror = "2"
@@ -25,3 +28,4 @@ clap = { version = "4", features = ["derive", "env"] }
 anyhow = "1"
 chrono = { version = "0.4", default-features = false, features = ["clock", "serde"] }
 base64 = "0.22"
+uniffi = { version = "0.29", features = ["cli"] }
